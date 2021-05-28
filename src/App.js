@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import "./App.css";
 import "./fonts/NightLight-Font.otf";
 import NeonSignHome from "./components/NeonSignHome.js";
+import Background from "./components/Background.js";
 import Subject from "./components/Subject.js";
 
 /* App */
@@ -267,23 +268,26 @@ function App() {
   ];
   return (
     <div
-      className="bg-image"
+      className="bg-image page"
       style={{ backgroundImage: "url(/wall-texture.jpg)" }}
     >
       <NeonSignHome />
-      <p className="home-text">
-        College is becoming ever more expensive, but it is also true that great
-        college courses, for free, are just a click away...
-      </p>
+      <Background />
+      <div className='content'>
+        <p>
+          College is becoming ever more expensive, but it is also true that great
+          college courses, for free, are just a click away...
+        </p>
 
-      <p>SCROLL DOWN TO EXPLORE</p>
-      <p>
-        <i className="arrow"></i>
-      </p>
+        <p>SCROLL DOWN TO EXPLORE</p>
+        <p>
+          <i className="arrow"></i>
+        </p>
 
-      <p>SELECT A SUBJECT TO GET STARTED</p>
+        <p className='select'>SELECT A SUBJECT TO GET STARTED</p>
 
-      <Subject subjectList={courseList} />
+        <Subject subjectList={courseList} />
+      </div>
     </div>
   );
 }

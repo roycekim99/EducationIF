@@ -15,7 +15,7 @@ function Subject({ subjectList }) {
   return (
     <>
       {subjects.map((subjectObj, i) => (
-        <div className="subject-name">
+        <div>
           <Modal
             videos={subjectList.filter((e) => {
               return e.subject === subjectObj;

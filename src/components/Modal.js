@@ -18,7 +18,7 @@ function Modal(props) {
   return props.trigger ? (
     <div className="modal">
       <div
-        className="bg-image"
+        className="bg-image modal-content"
         style={{ backgroundImage: "url(/wall-texture.jpg)" }}
       >
         <button className="back-btn" onClick={() => props.setTrigger(false)}>
