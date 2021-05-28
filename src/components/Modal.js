@@ -3,17 +3,17 @@ import React, { useRef, useEffect, useState } from "react";
 function Modal(props) {
   const [timedTopic, setTimedTopic] = useState(true);
 
-  console.log(props);
-
   //breathing animation
-//   useEffect(() => {
-//     setTimeout(() => {
-//       setTimedTopic(false);
-//     }, 4000);
-//     setTimeout(() => {
-//       setTimedTopic(true);
-//     }, 8000);
-//   });
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setTimedTopic(false);
+  //   }, 4000);
+  //   setTimeout(() => {
+  //     setTimedTopic(true);
+  //   }, 8000);
+  // });
+
+  console.log(props.videos);
 
   return props.trigger ? (
     <div className="modal">
@@ -24,9 +24,10 @@ function Modal(props) {
         <button className="back-btn" onClick={() => props.setTrigger(false)}>
           Back
         </button>
-        {
-            
-        }
+
+        {props.videos.map((obj) => (
+          <div>{obj.title}</div>
+        ))}
       </div>
     </div>
   ) : (

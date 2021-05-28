@@ -17,7 +17,9 @@ function Subject({ subjectList }) {
       {subjects.map((subjectObj, i) => (
         <div className="subject-name">
           <Modal
-            videos={subjectList}
+            videos={subjectList.filter((e) => {
+              return e.subject === subjectObj;
+            })}
             selectedSubject={subjectObj}
             trigger={modalPopup}
             setTrigger={setModalPopup}
