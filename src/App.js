@@ -266,6 +266,7 @@ function App() {
       prof: "Dr. Sam Richards",
     },
   ];
+
   return (
     <div
       className="bg-image page"
@@ -286,7 +287,7 @@ function App() {
 
         <p className='select'>SELECT A SUBJECT TO GET STARTED</p>
 
-        <Subject subjectList={courseList} />
+        <Subject courses={courseList} />
       </div>
     </div>
   );

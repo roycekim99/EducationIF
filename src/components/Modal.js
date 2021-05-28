@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 
 function Modal(props) {
-  const [timedTopic, setTimedTopic] = useState(true);
+  //const [timedTopic, setTimedTopic] = useState(true);
 
   //breathing animation
   // useEffect(() => {
@@ -13,7 +13,9 @@ function Modal(props) {
   //   }, 8000);
   // });
 
-  console.log(props.videos);
+  const videoList = props.courses.filter((subjectObj) => {
+    return subjectObj.subject == props.selectedSubject;
+  });
 
   return props.trigger ? (
     <div className="modal">
@@ -25,7 +27,7 @@ function Modal(props) {
           Back
         </button>
 
-        {props.videos.map((obj) => (
+        {videoList.map((obj) => (
           <div>{obj.title}</div>
         ))}
       </div>

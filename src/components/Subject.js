@@ -1,30 +1,38 @@
 import React, { useRef, useState } from "react";
-import Modal from "./Modal.js";
+import Button from "./Button.js";
 
-function Subject({ subjectList }) {
+const colors = [
+  "#DFFF00",
+  "#FFBF00",
+  "#FF7F50",
+  "#DE3163",
+  "#9FE2BF",
+  "#40E0D0",
+  "#6495ED",
+  "#CCCCFF",
+];
+
+function Subject(props) {
   let subjects = [];
-  const [modalPopup, setModalPopup] = useState(false);
 
   //find all unique subject names
-  for (var i = 0; i < subjectList.length; i++) {
-    if (!subjects.includes(subjectList[i].subject)) {
-      subjects.push(subjectList[i].subject);
+  for (let courseItem in props.courses) {
+    if (!subjects.includes(props.courses[courseItem].subject)) {
+      subjects.push(props.courses[courseItem].subject);
     }
   }
+  console.log(subjects);
 
   return (
     <>
       {subjects.map((subjectObj, i) => (
         <div>
-          <Modal
-            videos={subjectList.filter((e) => {
-              return e.subject === subjectObj;
-            })}
-            selectedSubject={subjectObj}
-            trigger={modalPopup}
-            setTrigger={setModalPopup}
+          <Button
+            key={subjectObj}
+            subject={subjectObj}
+            color={colors[i % 8]}
+            courseItems={props.courses}
           />
-          <button onClick={() => setModalPopup(true)}>{subjectObj}</button>
         </div>
       ))}
     </>
