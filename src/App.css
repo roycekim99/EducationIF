@@ -25,7 +25,7 @@ video {
 }
 
 .background-wrapper {
-  height: 900px;
+  height: 1200px;
   width: fit-content;
   display: flex;
   align-items: flex-end;
@@ -42,7 +42,8 @@ video {
 h1,
 h2,
 h3,
-button {
+button,
+.topic-name {
   font-family: "NightLight", cursive;
 }
 
@@ -56,8 +57,76 @@ p {
   margin-top: 120px;
 }
 
-.subject-name {
-  font-size: 12px;
+.subject-name, .topic-name {
+  font-size: 48px;
+
+  line-height: 9vw;
+  text-shadow: 0 0 3vw #2356ff;
+  animation: flux 2s linear infinite;
+  -moz-animation: flux 2s linear infinite;
+  -webkit-animation: flux 2s linear infinite;
+  -o-animation: flux 2.5s linear infinite;
+}
+
+/*
+Orange - #ff3d00
+Yellow - #ffba09
+Green -  #00ff62
+Light Blue - #12f3f3
+Blue -   #18baff
+*/
+
+@keyframes fluxOrange {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #ff3d00;
+  }
+  20% {
+    text-shadow: 0 0 0.5vw #851f00;
+  }
+}
+@keyframes fluxYellow {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #ffba09;
+  }
+  20% {
+    text-shadow: 0 0 0.5vw #705204;
+  }
+}
+@keyframes fluxGreen {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #00ff62;
+  }
+  20% {
+    text-shadow: 0 0 0.5vw #003f18;
+  }
+}
+@keyframes fluxLBlue {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #18baff;
+  }
+  20% {
+    text-shadow: 0 0 0.5vw #0b4f6d;
+  }
+}
+@keyframes fluxBlue {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #00ff62;
+  }
+  20% {
+    text-shadow: 0 0 0.5vw #003f18;
+  }
+}
+
+.topic-name {
+  font-size: 38px;
+  border-style: double;
+  border-radius: 9px;
+  border-width: 5px;
 }
 
 .home-text {
@@ -71,7 +140,7 @@ div {
 
 .modal {
   display: flex;
-  height: 1000px;
+  height: 1200px;
   width: 100%;
   z-index: 10;
   position: fixed;
@@ -81,6 +150,7 @@ div {
 
 .modal-content {
   align-content: space-around;
+  width: 100%;
 }
 
 button {

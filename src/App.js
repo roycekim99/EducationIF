@@ -270,14 +270,16 @@ function App() {
   return (
     <div
       className="bg-image page"
-      style={{ backgroundImage: "url(/wall-texture.jpg)" }}
+      style={{
+        backgroundImage: "url(/wall-texture.jpg)",
+      }}
     >
       <NeonSignHome />
       <Background />
-      <div className='content'>
+      <div className="content">
         <p>
-          College is becoming ever more expensive, but it is also true that great
-          college courses, for free, are just a click away...
+          College is becoming ever more expensive, but it is also true that
+          great college courses, for free, are just a click away...
         </p>
 
         <p>SCROLL DOWN TO EXPLORE</p>
@@ -285,7 +287,7 @@ function App() {
           <i className="arrow"></i>
         </p>
 
-        <p className='select'>SELECT A SUBJECT TO GET STARTED</p>
+        <p className="select">SELECT A SUBJECT TO GET STARTED</p>
 
         <Subject courses={courseList} />
       </div>

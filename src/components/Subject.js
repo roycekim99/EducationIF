@@ -1,15 +1,13 @@
 import React, { useRef, useState } from "react";
 import Button from "./Button.js";
 
-const colors = [
-  "#DFFF00",
-  "#FFBF00",
-  "#FF7F50",
-  "#DE3163",
-  "#9FE2BF",
-  "#40E0D0",
-  "#6495ED",
-  "#CCCCFF",
+const colors = ["#FF3D00", "#FFBA09", "#00FF62", "#12F3F3", "#18BAFF"];
+const animationNames = [
+  "fluxOrange 2s linear infinite",
+  "fluxYellow 2s linear infinite",
+  "fluxGreen 2s linear infinite",
+  "fluxLBlue 2s linear infinite",
+  "fluxBlue 2s linear infinite",
 ];
 
 function Subject(props) {
@@ -26,11 +24,13 @@ function Subject(props) {
   return (
     <>
       {subjects.map((subjectObj, i) => (
-        <div>
+        <div key={subjectObj}>
           <Button
-            key={subjectObj}
+            animationList={animationNames}
+            colorList={colors}
+            animate={animationNames[i % animationNames.length]}
             subject={subjectObj}
-            color={colors[i % 8]}
+            color={colors[i % colors.length]}
             courseItems={props.courses}
           />
         </div>

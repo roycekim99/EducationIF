@@ -1,18 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
+import VideoLists from "./VideoLists.js";
 
 function Modal(props) {
-  //const [timedTopic, setTimedTopic] = useState(true);
-
-  //breathing animation
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setTimedTopic(false);
-  //   }, 4000);
-  //   setTimeout(() => {
-  //     setTimedTopic(true);
-  //   }, 8000);
-  // });
-
+  const [timedTopic, setTimedTopic] = useState(true);
   const videoList = props.courses.filter((subjectObj) => {
     return subjectObj.subject == props.selectedSubject;
   });
@@ -27,8 +17,12 @@ function Modal(props) {
           Back
         </button>
 
-        {videoList.map((obj) => (
-          <div>{obj.title}</div>
+        {videoList.map((obj, i) => (
+          <VideoLists
+            key={obj.id}
+            className="topic-name"
+            videoTitle={obj.title}
+          />
         ))}
       </div>
     </div>

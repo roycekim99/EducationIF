@@ -7,16 +7,17 @@ function Button(props) {
   return (
     <div>
       <button
-        style={{ color: props.color }}
+        style={{ color: props.color, animation: props.animate }}
         onClick={() => setModalPopup(true)}
+        className="subject-name"
       >
         {props.subject}
       </button>
       <Modal
-        trigger={modalPopup}
         courses={props.courseItems}
         selectedSubject={props.subject}
         setTrigger={setModalPopup}
+        trigger={modalPopup}
       />
     </div>
   );
