@@ -3,7 +3,6 @@ import Modal from "./Modal.js";
 
 function Button(props) {
   const [modalPopup, setModalPopup] = useState(false);
-
   return (
     <div>
       <button
@@ -14,6 +13,8 @@ function Button(props) {
         {props.subject}
       </button>
       <Modal
+        colorList={props.colorList}
+        animationList={props.animationList}
         courses={props.courseItems}
         selectedSubject={props.subject}
         setTrigger={setModalPopup}

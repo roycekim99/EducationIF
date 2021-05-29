@@ -124,6 +124,7 @@ Blue -   #18baff
 
 .topic-name {
   font-size: 38px;
+  margin: 50px;
   border-style: double;
   border-radius: 9px;
   border-width: 5px;
@@ -153,6 +154,23 @@ div {
   width: 100%;
 }
 
+.back-btn {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.left-arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  padding: 3px;
+  margin-right: 3px;
+  transform: rotate(135deg) scale(2);
+  -webkit-transform: rotate(135deg) scale(2);
+  display: inline-block;
+  vertical-align: 0.1em;
+}
+
 button {
   font-size: 1.5rem;
   margin-bottom: 50px;
@@ -179,7 +197,7 @@ button:focus {
   outline: 0;
 }
 
-.arrow {
+.down-arrow {
   margin-top: 70px;
   border: solid black;
   border-width: 0 3px 3px 0;

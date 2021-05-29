@@ -1,8 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
-import VideoLists from "./VideoLists.js";
+import VideoItem from "./VideoItem.js";
 
 function Modal(props) {
   const [timedTopic, setTimedTopic] = useState(true);
+
   const videoList = props.courses.filter((subjectObj) => {
     return subjectObj.subject == props.selectedSubject;
   });
@@ -13,15 +14,20 @@ function Modal(props) {
         className="bg-image modal-content"
         style={{ backgroundImage: "url(/wall-texture.jpg)" }}
       >
-        <button className="back-btn" onClick={() => props.setTrigger(false)}>
-          Back
-        </button>
+        <div className='back-btn-container'>
+          <button className="back-btn" onClick={() => props.setTrigger(false)}>
+          <i className="left-arrow"></i>
+            Back
+          </button>
+        </div>
 
         {videoList.map((obj, i) => (
-          <VideoLists
+          <VideoItem
             key={obj.id}
-            className="topic-name"
             videoTitle={obj.title}
+            color={props.colorList[i % props.colorList.length]}
+            animation={props.animationList[i % props.animationList.length]}
+            videoURL={obj.url}
           />
         ))}
       </div>
