@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import VideoDisplayButton from "./VideoDisplayButton.js";
 import VideoPlayer from "./VideoPlayer.jsx";
+import ReactPlayer from "react-player";
 
 class VideoItem extends React.Component {
   constructor(props) {
@@ -9,10 +10,33 @@ class VideoItem extends React.Component {
       overlay_visibility: "hidden",
       overlay_opacity: 0,
       overlay_display: "none",
+      playVideo: false,
+      boxText: this.props.school,
+      switchTopic: true,
     };
 
     this.showModal = this.showModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.delayTimer = this.delayTimer.bind(this);
+    this.delayedFunction = this.delayedFunction.bind(this);
+  }
+
+  delayedFunction() {
+    this.setState({
+      switchTopic: !this.state.switchTopic,
+      boxText: this.state.switchTopic
+        ? this.props.videoTitle
+        : this.props.school,
+    });
+    this.delayTimer();
+  }
+
+  delayTimer() {
+    setTimeout(this.delayedFunction, 3000);
+  }
+
+  componentDidMount() {
+    this.delayTimer();
   }
 
   showModal() {
@@ -20,6 +44,7 @@ class VideoItem extends React.Component {
       overlay_visibility: "visible",
       overlay_opacity: 1,
       overlay_display: "block",
+      playVideo: true,
     });
   }
 
@@ -28,6 +53,7 @@ class VideoItem extends React.Component {
       overlay_visibility: "hidden",
       overlay_opacity: 0,
       overlay_display: "none",
+      playVideo: false,
     });
   }
 
@@ -39,7 +65,7 @@ class VideoItem extends React.Component {
           className="topic-name"
           onClick={this.showModal}
         >
-          {this.props.videoTitle}
+          {this.state.boxText}
         </div>
         <div
           class="popup__overlay"
@@ -53,7 +79,11 @@ class VideoItem extends React.Component {
             <a href="#" class="popup__close" onClick={this.closeModal}>
               X
             </a>
-            <VideoPlayer url={this.props.videoURL} />
+            <ReactPlayer
+              url={this.props.videoURL}
+              playing={this.state.playVideo}
+              controls="True"
+            />
           </div>
         </div>
       </>

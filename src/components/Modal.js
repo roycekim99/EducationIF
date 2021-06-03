@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useState } from "react";
 import VideoItem from "./VideoItem.js";
 
 function Modal(props) {
-  const [timedTopic, setTimedTopic] = useState(true);
 
   const videoList = props.courses.filter((subjectObj) => {
     return subjectObj.subject == props.selectedSubject;
@@ -14,9 +13,9 @@ function Modal(props) {
         className="bg-image modal-content"
         style={{ backgroundImage: "url(/wall-texture.jpg)" }}
       >
-        <div className='back-btn-container'>
+        <div className="back-btn-container">
           <button className="back-btn" onClick={() => props.setTrigger(false)}>
-          <i className="left-arrow"></i>
+            <i className="left-arrow"></i>
             Back
           </button>
         </div>
@@ -25,6 +24,7 @@ function Modal(props) {
           <VideoItem
             key={obj.id}
             videoTitle={obj.title}
+            school={obj.school}
             color={props.colorList[i % props.colorList.length]}
             animation={props.animationList[i % props.animationList.length]}
             videoURL={obj.url}

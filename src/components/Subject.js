@@ -19,7 +19,8 @@ function Subject(props) {
       subjects.push(props.courses[courseItem].subject);
     }
   }
-  console.log(subjects);
+
+  const school = props.school;
 
   return (
     <>
@@ -32,6 +33,7 @@ function Subject(props) {
             subject={subjectObj}
             color={colors[i % colors.length]}
             courseItems={props.courses}
+            school={school}
           />
         </div>
       ))}

@@ -57,7 +57,8 @@ p {
   margin-top: 120px;
 }
 
-.subject-name, .topic-name {
+.subject-name,
+.topic-name {
   font-size: 48px;
 
   line-height: 9vw;
@@ -66,60 +67,6 @@ p {
   -moz-animation: flux 2s linear infinite;
   -webkit-animation: flux 2s linear infinite;
   -o-animation: flux 2.5s linear infinite;
-}
-
-/*
-Orange - #ff3d00
-Yellow - #ffba09
-Green -  #00ff62
-Light Blue - #12f3f3
-Blue -   #18baff
-*/
-
-@keyframes fluxOrange {
-  0%,
-  100% {
-    text-shadow: 0 0 1vw #ff3d00;
-  }
-  20% {
-    text-shadow: 0 0 0.5vw #851f00;
-  }
-}
-@keyframes fluxYellow {
-  0%,
-  100% {
-    text-shadow: 0 0 1vw #ffba09;
-  }
-  20% {
-    text-shadow: 0 0 0.5vw #705204;
-  }
-}
-@keyframes fluxGreen {
-  0%,
-  100% {
-    text-shadow: 0 0 1vw #00ff62;
-  }
-  20% {
-    text-shadow: 0 0 0.5vw #003f18;
-  }
-}
-@keyframes fluxLBlue {
-  0%,
-  100% {
-    text-shadow: 0 0 1vw #18baff;
-  }
-  20% {
-    text-shadow: 0 0 0.5vw #0b4f6d;
-  }
-}
-@keyframes fluxBlue {
-  0%,
-  100% {
-    text-shadow: 0 0 1vw #00ff62;
-  }
-  20% {
-    text-shadow: 0 0 0.5vw #003f18;
-  }
 }
 
 .topic-name {
@@ -209,7 +156,6 @@ button:focus {
 
 /* modal stuff */
 
-
 .popup__overlay {
   display: none;
   position: fixed;
@@ -277,4 +223,58 @@ iframe {
   bottom: 0;
   left: 5%;
   right: 0;
+}
+
+/*
+Orange - #ff3d00
+Yellow - #ffba09
+Green -  #00ff62
+Light Blue - #12f3f3
+Blue -   #18baff
+*/
+
+@keyframes fluxOrange {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #ff3d00;
+  }
+  20% {
+    text-shadow: 0 0 0.5vw #851f00;
+  }
+}
+@keyframes fluxYellow {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #ffba09;
+  }
+  20% {
+    text-shadow: 0 0 0.5vw #705204;
+  }
+}
+@keyframes fluxGreen {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #00ff62;
+  }
+  20% {
+    text-shadow: 0 0 0.5vw #003f18;
+  }
+}
+@keyframes fluxLBlue {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #18baff;
+  }
+  20% {
+    text-shadow: 0 0 0.5vw #0b4f6d;
+  }
+}
+@keyframes fluxBlue {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #00ff62;
+  }
+  20% {
+    text-shadow: 0 0 0.5vw #003f18;
+  }
 }

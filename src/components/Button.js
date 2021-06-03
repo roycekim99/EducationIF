@@ -19,6 +19,7 @@ function Button(props) {
         selectedSubject={props.subject}
         setTrigger={setModalPopup}
         trigger={modalPopup}
+        school={props.school}
       />
     </div>
   );

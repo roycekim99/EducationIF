@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import "./App.css";
+import "./reset.css";
 import "./fonts/NightLight-Font.otf";
 import NeonSignHome from "./components/NeonSignHome.js";
 import Background from "./components/Background.js";
@@ -12,7 +13,7 @@ function App() {
       id: 1,
       subject: "Biology ",
       title: "Human Behavioral Biology",
-      url: "https://www.youtube.com/embed?v=oKNAzl-XN4I&t=5511s",
+      url: "https://www.youtube.com/embed/oKNAzl-XN4I",
       thumbnail_url: "https://img.youtube.com/vi/oKNAzl-XN4I/1.jpg",
       school: "Stanford",
       prof: "Robert Sapolsky",
@@ -78,7 +79,7 @@ function App() {
       id: 8,
       subject: "Psychology",
       title: "Human Behavioral Biology",
-      url: "https://www.youtube.com/embed?v=NNnIGh9g6fA",
+      url: "https://www.youtube.com/embed/NNnIGh9g6fA",
       thumbnail_url: "https://img.youtube.com/vi/NNnIGh9g6fA/0.jpg",
       school: "Stanford",
       prof: "Robert Sapolsky",
@@ -251,7 +252,7 @@ function App() {
       id: 27,
       subject: "Social Science",
       title: "SOC119 Live Stream Class 26: The Social Life of God",
-      url: "https://www.youtube.com/embed?v=0gIueAXIeKw",
+      url: "https://www.youtube.com/embed/0gIueAXIeKw",
       thumbnail_url: "https://img.youtube.com/vi/0gIueAXIeKw/0.jpg",
       school: "Penn State",
       prof: "Dr. Sam Richards",
@@ -260,7 +261,7 @@ function App() {
       id: 28,
       subject: "Social Science",
       title: "SOC119 Live Stream Class 27: A Sociologist & A Yogi",
-      url: "https://www.youtube.com/embed?v=x_-OykbUA3I",
+      url: "https://www.youtube.com/embed/x_-OykbUA3I",
       thumbnail_url: "https://img.youtube.com/vi/x_-OykbUA3I/0.jpg",
       school: "Penn State",
       prof: "Dr. Sam Richards",
